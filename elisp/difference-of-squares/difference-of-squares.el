@@ -5,7 +5,7 @@
 ;;; Code:
 (defun square-of-sums (until)
   "Computes the square of the sum of 0 ... until"
-  (square-number (reduce '+ (number-sequence 0 until)))
+  (expt (reduce '+ (number-sequence 0 until)) 2)
   )
 
 (defun sum-of-squares (until)
@@ -14,11 +14,7 @@
   )
 
 (defun square (numbers)
-  (mapcar 'square-number numbers)
-  )
-
-(defun square-number (number)
-  (* number number)
+  (mapcar '(lambda (x) (* x x)) numbers)
   )
 
 (defun difference (until)
